@@ -18,4 +18,8 @@ export class PaygroundComponent {
 
   }
 
+  handleInput(usernameValue: string) {
+    console.log('username: ', usernameValue);
+    usernameValue = '';
+  }
 }

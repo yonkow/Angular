@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 interface User {
   name: string;
   age: number;
-  status: string;
+  status?: string;
 }
 
 @Component({
@@ -21,18 +21,18 @@ export class UserListComponent {
   isToggle = false;
 
   users = [
-    { name: 'Pesho', age: 17, status: 'green' },
-    { name: 'Mitko', age: 30, status: 'red' },
-    { name: 'Ivka', age: 29, status: 'yellow' },
-    { name: 'Heilun', age: 2, status: 'red' },
+    { name: 'Pesho', age: 17 },
+    { name: 'Mitko', age: 30 },
+    { name: 'Ivka', age: 29, status: 'red' },
+    { name: 'Heilun', age: 2, status: 'yellow' },
     { name: 'Niki', age: 28, status: 'green' },
   ] as User[];
 
   handleClick() {
     this.isToggle = !this.isToggle
-    
+
     console.log('clicked!');
     console.log(this.isToggle);
-    
+
   }
 }
