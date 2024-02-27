@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-demo-app-16-components';
 
+  onOutputFromChild(inputValue: string) {
+    console.log('from Parent: ', inputValue);
+    
+  }
 }
