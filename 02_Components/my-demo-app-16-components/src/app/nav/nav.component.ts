@@ -6,10 +6,10 @@ import { Component } from "@angular/core";
     <div id="nav- wrapper">Hello navigation</div>
     <div id="nav- wrapper">Hello navigation</div>
     <div id="nav- wrapper">Hello navigation</div>
-    <div>{{ title }}</div>
+    <div>{{ titleVar }}</div>
     </div>`,
     styles: ['#nav-wrapper: {background-color: pink;}'],
 })
 export class NavComponent {
-    title = 'zdr title';
+    titleVar = 'zdr title';
 }
