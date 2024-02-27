@@ -5,10 +5,11 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { PaygroundComponent } from './payground/payground.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavComponent, NavigationComponent, UserListComponent
+    AppComponent, NavComponent, NavigationComponent, UserListComponent, PaygroundComponent
   ],
   imports: [
     BrowserModule
