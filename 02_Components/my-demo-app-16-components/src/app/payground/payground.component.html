@@ -14,6 +14,7 @@
 
 <input type="text" placeholder="username" #username/>
 <button (click)="handleInput(username.value)">Handle Input</button>
+<div [style.background-color]="colorValue">Test 123</div>
 
 <!-- <div [ngClass]="['first', 'second']">TEST ngClass</div>
 <div [class]="['first', 'second']">TEST attribute class</div>

@@ -6,6 +6,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./payground.component.css']
 })
 export class PaygroundComponent implements OnInit, OnDestroy {
+  @Input('color') colorValue = 'white'
 
   isToggle = false
   imgUrl = 'https://t3.ftcdn.net/jpg/02/75/98/22/360_F_275982235_xzqfvupzoy03oAiWf7iFTpTcpvVaR4TF.jpg'
@@ -38,5 +39,6 @@ export class PaygroundComponent implements OnInit, OnDestroy {
 
   handleInput(usernameValue: string) {
     console.log('username: ', usernameValue);
+    console.log(this.colorValue);
   }
 }
