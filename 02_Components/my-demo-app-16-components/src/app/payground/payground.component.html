@@ -3,6 +3,7 @@
 <button class="btn-handler" (click)="handleClick()">Click me!</button>
 
 
+<div [style.color]="isToggle ? 'orange': 'white'">This is dynamic color change</div>
 <p [class.shiny]="isToggle">This text will be shiny in click</p>
 <div *ngIf="isToggle">
     <div [class]="greenBackground">Toggle me!</div>
