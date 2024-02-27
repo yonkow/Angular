@@ -3,3 +3,13 @@
     height: 50px;
     font-size: 30px;
 }
+
+.background-green {
+    background-color: rgb(21, 70, 21);
+}
+
+.shiny {
+    background-color: goldenrod;
+    font-size: 30px;
+    color: green;
+}

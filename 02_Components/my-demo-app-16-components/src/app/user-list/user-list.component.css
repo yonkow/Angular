@@ -1,5 +1,9 @@
-.btn-handler {
-    width: 200px;
-    height: 50px;
-    font-size: 30px;
+.green {
+    background-color: darkolivegreen;
+}
+.red {
+    background-color: mediumslateblue;
+}
+.yellow {
+    background-color: darkorange;
 }

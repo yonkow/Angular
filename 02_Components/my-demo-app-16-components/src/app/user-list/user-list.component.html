@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor="let user of users; index as i">
-        <span>
+        <span [class]="user.status">
             name of {{ user.name }} and {{ user.age }} y/o.
         </span>
         <!-- <span *ngIf="i%2 !== 0" style="background-color: pink;">
@@ -11,4 +11,4 @@
 
 <!-- <div *ngIf="isToggle">Toggle me!</div> -->
 
-<button class="btn-handler" (click)="handleClick()">Click me!</button>
+<!-- <button class="btn-handler" (click)="handleClick()">Click me!</button> -->

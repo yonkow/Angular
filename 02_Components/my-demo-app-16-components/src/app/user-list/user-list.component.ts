@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
 
-type User = {
-  name: string,
-  age: number,
+// type User = {
+//   name: string;
+//   age: number;
+//   status: string;
+// }
+
+interface User {
+  name: string;
+  age: number;
+  status: string;
 }
 
 @Component({
@@ -14,11 +21,11 @@ export class UserListComponent {
   isToggle = false;
 
   users = [
-    { name: 'Pesho', age: 17 },
-    { name: 'Mitko', age: 30 },
-    { name: 'Ivka', age: 29 },
-    { name: 'Heilun', age: 2 },
-    { name: 'Niki', age: 28 },
+    { name: 'Pesho', age: 17, status: 'green' },
+    { name: 'Mitko', age: 30, status: 'red' },
+    { name: 'Ivka', age: 29, status: 'yellow' },
+    { name: 'Heilun', age: 2, status: 'red' },
+    { name: 'Niki', age: 28, status: 'green' },
   ] as User[];
 
   handleClick() {
