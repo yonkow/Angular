@@ -11,10 +11,18 @@ export class AppComponent {
   title = 'my-palyground';
 
   constructor(public userService: UserService) {}
-  // constructor(private cd: ChangeDetectorRef) {
-  //   setTimeout(() => {
-  //     this.title = 'Changed from CD.'
-  //     this.cd.detectChanges();
-  //   }, 3000);
-  // }
+
+  setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
+    this.userService.addUser(inputName, inputAge);
+    // We would push additional functionality
+  }
 }
+
+
+
+// constructor(private cd: ChangeDetectorRef) {
+//   setTimeout(() => {
+//     this.title = 'Changed from CD.'
+//     this.cd.detectChanges();
+//   }, 3000);
+// }
