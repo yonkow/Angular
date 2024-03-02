@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../types/user';
+import { JsonPlaceHolderUser, User } from '../types/user';
 
 @Component({
   selector: 'app-user-item',
@@ -7,5 +7,5 @@ import { User } from '../types/user';
   styleUrls: ['./user-item.component.css']
 })
 export class UserItemComponent {
-  @Input('user') user = {} as User;
+  @Input('user') user = {} as JsonPlaceHolderUser;
 }
