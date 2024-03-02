@@ -1,6 +1,6 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
-import { User } from './types/user';
+import { Component } from '@angular/core';
 import { UserService } from './user.service';
+import { User } from './types/user';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,13 @@ import { UserService } from './user.service';
 })
 export class AppComponent {
   title = 'my-palyground';
-
-  constructor(public userService: UserService) {}
+  appUsers: User[] = [];
+  constructor(private userService: UserService) { 
+    this.appUsers = this.userService.users;
+  }
 
   setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
+    //  Validaton of inputs???? Transformation  of the input???
     this.userService.addUser(inputName, inputAge);
     // We would push additional functionality
   }
