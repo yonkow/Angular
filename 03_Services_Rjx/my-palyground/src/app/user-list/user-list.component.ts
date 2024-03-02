@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { User } from '../types/user';
 
 @Component({
@@ -9,4 +9,11 @@ import { User } from '../types/user';
 })
 export class UserListComponent {
   @Input('users') userListData: User[] = [];
+
+  constructor(private cd: ChangeDetectorRef) {
+    setInterval(() => {
+      this.cd.detectChanges();
+      console.log('Changes Detected');
+    }, 3000)
+  }
 }

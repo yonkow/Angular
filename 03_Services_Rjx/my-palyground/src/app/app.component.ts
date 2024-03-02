@@ -16,9 +16,9 @@ export class AppComponent {
   ];
 
   constructor(private cd: ChangeDetectorRef) {
-    setTimeout(() => {
-      this.title = 'Changed from Angular!'
-    }, 3000);
+    // setTimeout(() => {
+    //   this.title = 'Changed from Angular!'
+    // }, 3000);
   }
 
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
@@ -28,7 +28,10 @@ export class AppComponent {
       age: Number(inputAge.value),
     }
 
-    this.users.push(user)
+    this.users.push(user);
+    // this.users = [...this.users, user];
+    console.log(this.users);
+
 
     inputName.value = '';
     inputAge.value = '';
