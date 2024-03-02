@@ -22,6 +22,6 @@ export class ApiService {
     if (limit) {
       url += `?limit=${limit}`;
     }
-    return this.http.get<Post>(url);
+    return this.http.get<Post[]>(url);
   }
 }
