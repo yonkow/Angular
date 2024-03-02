@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
+import { createUrlTreeFromSnapshot } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,3 +21,4 @@ import { UserItemComponent } from './user-item/user-item.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

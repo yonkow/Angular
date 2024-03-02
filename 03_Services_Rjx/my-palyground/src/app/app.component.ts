@@ -15,14 +15,7 @@ export class AppComponent {
     { name: 'Kircho', age: 12 },
   ];
 
-  constructor(private cd: ChangeDetectorRef) {
-    // setTimeout(() => {
-    //   this.title = 'Changed from Angular!'
-    // }, 3000);
-  }
-
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
-
     const user: User = {
       name: inputName.value,
       age: Number(inputAge.value),
@@ -31,13 +24,10 @@ export class AppComponent {
     this.users.push(user);
     // this.users = [...this.users, user];
     console.log(this.users);
-
-
+    
     inputName.value = '';
     inputAge.value = '';
   }
-
-
 
   // constructor(private cd: ChangeDetectorRef) {
   //   setTimeout(() => {

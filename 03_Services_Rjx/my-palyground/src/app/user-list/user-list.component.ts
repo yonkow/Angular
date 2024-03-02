@@ -11,9 +11,14 @@ export class UserListComponent {
   @Input('users') userListData: User[] = [];
 
   constructor(private cd: ChangeDetectorRef) {
-    setInterval(() => {
-      this.cd.detectChanges();
-      console.log('Changes Detected');
-    }, 3000)
+    // setInterval(() => {
+    //   this.cd.detectChanges();
+    //   console.log('Changes Detected');
+    // }, 3000)
   }
+
+  refresh() {
+    this.cd.detectChanges();
+  }
+
 }
