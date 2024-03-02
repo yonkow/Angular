@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { User } from './types/user';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'my-palyground';
@@ -16,6 +15,12 @@ export class AppComponent {
     { name: 'Kircho', age: 12 },
   ];
 
+  constructor(private cd: ChangeDetectorRef) {
+    setTimeout(() => {
+      this.title = 'Changed from Angular!'
+    }, 3000);
+  }
+
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
 
     const user: User = {
@@ -24,6 +29,9 @@ export class AppComponent {
     }
 
     this.users.push(user)
+
+    inputName.value = '';
+    inputAge.value = '';
   }
 
 
