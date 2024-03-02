@@ -7,7 +7,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
 import { createUrlTreeFromSnapshot } from '@angular/router';
 import { UserService } from './user.service';
-import { Observable } from 'rxjs';
+import { Observable, interval } from 'rxjs';
 
 @NgModule({
   declarations: [AppComponent, UserListComponent, UserItemComponent],
@@ -59,21 +59,21 @@ p.then((data) => {
 //   console.log('from observable: ', data);
 // });
 
-const interval = (intervalValue: number) => {
-  const o = new Observable<number>((observer) => {
-    let counter = 0;
+// const interval = (intervalValue: number) => {
+//   const o = new Observable<number>((observer) => {
+//     let counter = 0;
 
-    const timer = setInterval(() => {
-      observer.next(counter++);
-    }, intervalValue);
-    // clear data on destroy
-    return () => {
-      clearInterval(timer);
-    };
-  });
+//     const timer = setInterval(() => {
+//       observer.next(counter++);
+//     }, intervalValue);
+//     // clear data on destroy
+//     return () => {
+//       clearInterval(timer);
+//     };
+//   });
 
-  return o;
-};
+//   return o;
+// };
 
 interval(2000).subscribe((data) => {
   console.log('data from Interval: ', data);
