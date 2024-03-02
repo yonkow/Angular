@@ -8,6 +8,7 @@ import { Post } from '../types/posts';
   styleUrls: ['./posts-list.component.css'],
 })
 export class PostsListComponent implements OnInit {
+  isloading: boolean = true;
   posts: Post[] = [];
 
   constructor(private api: ApiService) {}
@@ -15,6 +16,9 @@ export class PostsListComponent implements OnInit {
   ngOnInit(): void {
     this.api.getPosts(5).subscribe((posts) => {
       this.posts = posts;
+      setTimeout(() => {
+        this.isloading = false;
+      }, 2500);
     });
   }
 }
