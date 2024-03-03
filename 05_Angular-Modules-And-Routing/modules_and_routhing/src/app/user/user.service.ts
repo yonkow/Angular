@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { User } from '../types/User';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,6 @@ export class UserService implements OnInit {
   }
 
   fetchUsers() {
-    return this.http.get('https://jsonplaceholder.typicode.com/users')
+    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users')
   }
 }
