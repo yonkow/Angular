@@ -64,3 +64,9 @@
 time {
     font-weight: bold;
 }
+
+.welcome-comp {
+    padding-bottom: 50px;
+    width: 95%;
+    margin: 0 auto;
+}
