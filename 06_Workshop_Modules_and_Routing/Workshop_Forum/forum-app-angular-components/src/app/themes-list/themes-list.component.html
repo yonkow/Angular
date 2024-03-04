@@ -2,7 +2,7 @@
     <div *ngIf="isLoading">
         <app-loader />
     </div>
-    <div class="welcome-comp">
+    <div *ngIf="!isLogged" class="welcome-comp">
         <app-welcome />
     </div>
 

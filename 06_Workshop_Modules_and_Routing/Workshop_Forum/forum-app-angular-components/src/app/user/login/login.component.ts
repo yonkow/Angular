@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   login(email: string, password: string): void {
     // TODO: for now we are not handling the data
     this.userService.login();
-    this.router.navigate(['/'])
+
+    const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
+
+    this.router.navigate([returnUrl]);
   }
 }
