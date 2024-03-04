@@ -19,6 +19,9 @@ const routes: Routes = [
         component: CurrentThemeComponent,
       },
     ],
+    data: {
+      title: 'Themes'
+    }
   },
   {
     path: 'add-theme',

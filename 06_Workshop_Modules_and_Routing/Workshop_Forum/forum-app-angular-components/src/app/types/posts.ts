@@ -2,9 +2,9 @@ import { Theme } from './theme';
 import { UserId } from './user';
 
 export interface Post {
-  likes: string[];
+  likes: string[] | [];
   _id: string;
-  text: string;
+  text: string | '';
   userId: UserId;
   themeId: Theme;
   created_at: string;

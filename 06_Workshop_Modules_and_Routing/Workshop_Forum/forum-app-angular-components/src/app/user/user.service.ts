@@ -25,6 +25,7 @@ export class UserService {
     this.user = {
       email: 'john.doe@gmail.com',
       firstName: 'John',
+      id: 'hardCoded'
     };
 
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
@@ -33,5 +34,9 @@ export class UserService {
   logout(): void {
     this.user = undefined;
     localStorage.removeItem(this.USER_KEY);
+  }
+
+  getUser() {
+    return localStorage.getItem(this.USER_KEY) || ''
   }
 }

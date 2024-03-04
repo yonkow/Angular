@@ -24,13 +24,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
     WelcomeComponent,
   ],
   imports: [
-    BrowserModule,
+    UserModule,
+    ThemeModule,
     AppRoutingModule,
+    BrowserModule,
     CoreModule,
     SharedModule,
     HttpClientModule,
-    UserModule,
-    ThemeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

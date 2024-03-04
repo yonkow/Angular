@@ -30,4 +30,11 @@ export class ApiService {
     }
     return this.http.get<Post[]>(url);
   }
+
+  // createPost(post: Post) {
+  //   const {apiUrl} = environment;
+  //   let url = `${apiUrl}/themes`
+    
+  //   return this.http.post<Theme>(url, body)
+  // }
 }
