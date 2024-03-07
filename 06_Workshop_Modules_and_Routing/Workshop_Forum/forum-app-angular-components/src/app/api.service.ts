@@ -30,11 +30,11 @@ export class ApiService {
     }
     return this.http.get<Post[]>(url);
   }
-
-  // createPost(post: Post) {
+  // TODO
+  // createTheme(themeName: string, postText: string) {
   //   const {apiUrl} = environment;
   //   let url = `${apiUrl}/themes`
     
-  //   return this.http.post<Theme>(url, body)
+  //   return this.http.post<Theme>(url, themeName: string, postText: string)
   // }
 }

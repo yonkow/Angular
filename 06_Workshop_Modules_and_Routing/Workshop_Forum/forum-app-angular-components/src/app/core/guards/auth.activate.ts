@@ -30,6 +30,6 @@ export class AuthActivate implements CanActivate {
       return true;
     }
     const returnUrl = route.url.map((u) => u.path).join('/');
-    return this.router.createUrlTree(['/login'],{ queryParams: {returnUrl}});
+    return this.router.createUrlTree(['/login'], {queryParams: { returnUrl }});
   }
 }

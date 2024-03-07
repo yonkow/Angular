@@ -3,7 +3,7 @@ import { UserId } from './user';
 
 export interface Theme {
   subscribers: string[];
-  posts: any;
+  posts: Post[];
   _id: string;
   themeName: string;
   userId: UserId;

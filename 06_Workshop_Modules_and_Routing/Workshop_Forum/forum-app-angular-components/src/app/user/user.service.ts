@@ -23,11 +23,11 @@ export class UserService {
 
   login(): void {
     this.user = {
+      id: '5fa64ca72183ce1728ff3726',
       firstName: 'John',
       email: 'john.doe@gmail.com',
       password: 'qweqwe',
-      phoneNumber: '123-123-123-123'
-      // id: 'hardCoded'
+      phoneNumber: '123-123-123-123',
     };
 
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
@@ -39,6 +39,6 @@ export class UserService {
   }
 
   getUser() {
-    return localStorage.getItem(this.USER_KEY) || ''
+    return localStorage.getItem(this.USER_KEY) || '';
   }
 }

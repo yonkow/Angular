@@ -24,9 +24,10 @@ const routes: Routes = [
     }
   },
   {
+    // TODO: da razbera zashto vliza pri ne lognat user
     path: 'add-theme',
-    component: NewThemeComponent,
     canActivate: [AuthActivate],
+    component: NewThemeComponent,
   },
 ];
 

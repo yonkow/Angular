@@ -17,6 +17,11 @@ export class ThemesListComponent implements OnInit {
   get isLogged(): boolean {
     return this.userService.isLogged;
   }
+
+  get userId(): string {
+    return this.userService.user?.id || '';
+  }
+
   ngOnInit(): void {
     this.api.getThemes().subscribe({
       next: (themes) => {
@@ -33,5 +38,11 @@ export class ThemesListComponent implements OnInit {
     });
   }
 
-  subscribe() {}
+  // TODO: da vidq zashto ne mi se smenqt butonite ???
+  isSubscribe(theme: Theme) {
+    const isSubscribedUser = theme.subscribers.find((s) => {
+      s === this.userService.user?.id;
+    });
+    return !!isSubscribedUser;
+  }
 }
