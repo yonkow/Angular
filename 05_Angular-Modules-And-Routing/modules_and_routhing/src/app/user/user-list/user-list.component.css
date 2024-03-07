@@ -10,3 +10,7 @@
   cursor: pointer;
   background-color: aliceblue;
 }
+
+.clickable:hover {
+  background-color: skyblue;
+}

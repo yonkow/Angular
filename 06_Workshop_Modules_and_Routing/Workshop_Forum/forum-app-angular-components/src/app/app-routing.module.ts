@@ -13,16 +13,16 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     data: {
-      title: 'SoftUni Forum'
-    }
-  },
-  {
-    path: '404',
-    component: NotFoundComponent,
+      title: 'SoftUni Forum',
+    },
   },
   {
     path: '**',
     redirectTo: '/404',
+  },
+  {
+    path: '404',
+    component: NotFoundComponent,
   },
 ];
 

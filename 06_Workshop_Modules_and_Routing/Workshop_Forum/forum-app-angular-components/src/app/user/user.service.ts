@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { UserReg } from '../types/UserReg';
+import { UserForAuth } from '../types/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  user: UserReg | undefined;
+  user: UserForAuth | undefined;
   USER_KEY = '[user]';
 
   get isLogged(): boolean {
@@ -23,9 +23,11 @@ export class UserService {
 
   login(): void {
     this.user = {
-      email: 'john.doe@gmail.com',
       firstName: 'John',
-      id: 'hardCoded'
+      email: 'john.doe@gmail.com',
+      password: 'qweqwe',
+      phoneNumber: '123-123-123-123'
+      // id: 'hardCoded'
     };
 
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
