@@ -20,14 +20,18 @@ const routes: Routes = [
       },
     ],
     data: {
-      title: 'Themes'
+      title: 'Themes',
+      loginRequired: false,
     }
   },
   {
-    // TODO: da razbera zashto vliza pri ne lognat user
     path: 'add-theme',
-    canActivate: [AuthActivate],
+    data: {
+      title: 'Add-Theme',
+      loginRequired: true,
+    },
     component: NewThemeComponent,
+    canActivate: [AuthActivate],
   },
 ];
 

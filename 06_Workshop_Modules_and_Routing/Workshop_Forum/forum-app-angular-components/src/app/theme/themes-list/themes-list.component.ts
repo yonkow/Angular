@@ -38,11 +38,10 @@ export class ThemesListComponent implements OnInit {
     });
   }
 
-  // TODO: da vidq zashto ne mi se smenqt butonite ???
   isSubscribe(theme: Theme) {
-    const isSubscribedUser = theme.subscribers.find((s) => {
-      s === this.userService.user?.id;
-    });
+    const isSubscribedUser = theme.subscribers.find((s) =>
+      s === this.userService.user?.id
+    );
     return !!isSubscribedUser;
   }
 }
