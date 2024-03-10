@@ -5,7 +5,7 @@ import { UserForAuth } from '../types/user';
   providedIn: 'root',
 })
 export class UserService {
-  user: UserForAuth | undefined;
+  user: UserForAuth | undefined
   USER_KEY = '[user]';
 
   get isLogged(): boolean {
@@ -27,7 +27,7 @@ export class UserService {
       firstName: 'John',
       email: 'john.doe@gmail.com',
       password: 'qweqwe',
-      phoneNumber: '123-123-123-123',
+      phoneNumber: '00123 123123123',
     };
 
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
