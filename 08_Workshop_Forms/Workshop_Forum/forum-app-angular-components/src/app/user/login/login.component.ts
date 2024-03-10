@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { appEmailDomains } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+
+  appEmailDomains = appEmailDomains
+
+  @ViewChild(
+    // 'form',
+    NgForm,
+    { static: true }
+  )
+  form!: ElementRef<HTMLInputElement>;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
@@ -16,11 +27,15 @@ export class LoginComponent {
   ) {}
 
   login(form: NgForm): void {
-    // // TODO: for now we are not handling the data
-    // this.userService.login();
+    // TODO: for now we are not handling the data
 
-    // const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
+    if (form.invalid) {return;}
 
-    // this.router.navigate([returnUrl]);
+    this.userService.login();
+
+    const returnUrl =
+      this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
+
+    this.router.navigate([returnUrl]);
   }
 }
