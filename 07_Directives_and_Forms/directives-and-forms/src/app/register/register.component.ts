@@ -7,11 +7,21 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  registerForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.maxLength(4)]],
+  });
 
-  registerForm = this.fb.group({email: ['', [Validators.required, Validators.email]], password: ['', [Validators.maxLength(4)]]})
+  ngAfterViewInit() {
+    if (this.registerForm) {
+      this.registerForm.valueChanges.subscribe((x) => {
+        console.log(x);
+      });
+    }
+  }
   constructor(private fb: FormBuilder) {}
 
-  handleSubmit():void {
+  handleSubmit(): void {
     console.log(this.registerForm.value);
   }
 }
