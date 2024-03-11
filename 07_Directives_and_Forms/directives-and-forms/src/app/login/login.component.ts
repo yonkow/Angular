@@ -9,12 +9,26 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
   @ViewChild('loginForm') form: NgForm | undefined;
 
+
+  // *Renders static content
+  // ngOnInit(): void {}
+
+  // *Renders the final content + dynamic content
+  // ngAfterViewInit(): void {}
+
   formSubmitHandler() {
     if (!this.form) {
       return;
     }
 
     const form = this.form;
+
+    if (form.invalid) {
+      console.log('Form is invalid');
+      
+      return;
+    }    
+    
     console.log(form.value);
 
     // *form value => on init
