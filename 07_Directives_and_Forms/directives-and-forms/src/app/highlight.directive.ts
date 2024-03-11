@@ -1,10 +1,24 @@
-import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  OnDestroy,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
+
+type MyVoid = () => void;
 
 @Directive({
   selector: '[appHighlight]',
 })
-export class HighlightDirective implements OnInit {
+export class HighlightDirective implements OnInit, OnDestroy {
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
+  // * @HostListener('mouseover', ['$event']) mouseOverHandler(e: MouseEvent) {
+  // console.log('mouseover: ', e);
+  // }
+
+  unsubFromEventsArray: MyVoid[] = [];
 
   ngOnInit(): void {
     // console.log(this.elRef.nativeElement);
@@ -14,45 +28,56 @@ export class HighlightDirective implements OnInit {
     // * Good practice - Abstract manupulation over DOM
     // this.renderer.setStyle(this.elRef.nativeElement, 'background', 'pink');
 
-    this.renderer.listen(
+    const mouseEnterEvent = this.renderer.listen(
       this.elRef.nativeElement,
       'mouseenter',
       this.mouseEnterHandler.bind(this)
     );
 
-    this.renderer.listen(
+    const mouseLeaveEvent = this.renderer.listen(
       this.elRef.nativeElement,
       'mouseleave',
       this.mouseLeaveHandler.bind(this)
     );
+
+    this.unsubFromEventsArray.push(mouseEnterEvent)
+    this.unsubFromEventsArray.push(mouseLeaveEvent)
   }
 
+  
   mouseEnterHandler(e: MouseEvent): void {
     // console.log(e);
-
+    
     /** Setting styles */
     // this.renderer.setStyle(
-    //   this.elRef.nativeElement,
-    //   'background-color',
-    //   'orange'
-    // );
-
-    /** Setting classes */
-    this.renderer.addClass(this.elRef.nativeElement, 'highlight')
-  }
-
-  mouseLeaveHandler(e: MouseEvent): void {
-    // console.log('mouse leave triggered');
-
+      //   this.elRef.nativeElement,
+      //   'background-color',
+      //   'orange'
+      // );
+      
+      /** Setting classes */
+      this.renderer.addClass(this.elRef.nativeElement, 'highlight');
+    }
+    
+    mouseLeaveHandler(e: MouseEvent): void {
+      // console.log('mouse leave triggered');
+      
       /** Setting styles */
-    // this.renderer.setStyle(
-    //   this.elRef.nativeElement,
-    //   'background-color',
-    //   'initial'
-    // );
+      // this.renderer.setStyle(
+        //   this.elRef.nativeElement,
+        //   'background-color',
+        //   'initial'
+        // );
+        
+        /** Setting classes */
+        this.renderer.removeClass(this.elRef.nativeElement, 'highlight');
+      }
 
-    /** Setting classes */
-    this.renderer.removeClass(this.elRef.nativeElement, 'highlight')
+      ngOnDestroy(): void {
+        console.log('On desteroy Invoked', this.unsubFromEventsArray);
 
-  }
-}
+        this.unsubFromEventsArray.forEach((eventFn) => {eventFn()})
+        
+      }
+    }
+    
