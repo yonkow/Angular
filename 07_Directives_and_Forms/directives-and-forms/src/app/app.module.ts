@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { MyRouterLinkDirective } from './my-router-link.directive';
 import { MyStucturalDirectiveDirective } from './my-stuctural-directive.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { MyStucturalDirectiveDirective } from './my-stuctural-directive.directiv
     MyRouterLinkDirective,
     MyStucturalDirectiveDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, 
+    AppRoutingModule, 
+    FormsModule, //TEMPLATE DRIVEN APPROACH
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

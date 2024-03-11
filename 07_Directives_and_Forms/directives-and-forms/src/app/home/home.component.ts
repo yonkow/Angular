@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyStucturalDirectiveDirective } from '../my-stuctural-directive.directive';
 
 @Component({
   selector: 'app-home',
@@ -11,5 +12,10 @@ export class HomeComponent {
 
   toggle() {
     this.isShown = !this.isShown
+  }
+
+  simpleClick(directiveRef: MyStucturalDirectiveDirective) {
+    console.log(directiveRef);
+    
   }
 }

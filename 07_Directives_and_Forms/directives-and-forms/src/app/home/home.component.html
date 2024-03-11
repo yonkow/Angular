@@ -24,9 +24,19 @@
 <div *appMyStucturalDirective="isShown">Structural Directive - Usage 1</div>
 
 <!-- Usage 2 -->
-<ng-template [appMyStucturalDirective]="isShown" let-testMe="myCustomValue" let-myNumberche="myNum">
+<ng-template [appMyStucturalDirective]="isShown" let-testMe="myCustomValue" let-myNumberche="myNum"
+    #directiveRef="appMyStucturalDirective">
     <div>Structural Directive - Usage 2</div>
 
     <div>myCustomValue: {{testMe}}</div>
     <div>myNum: {{myNumberche}}</div>
 </ng-template>
+
+<button (click)="simpleClick(directiveRef)">Simple click!</button>
+
+<!-- Usage 3 -->
+<ng-template #tmp>
+    <div>Structural Directive - Usage 3</div>
+</ng-template>
+
+<ng-container [appMyStucturalDirective]="isShown" [myTmpRef]="tmp" />
