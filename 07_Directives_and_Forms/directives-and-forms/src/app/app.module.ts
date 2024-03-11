@@ -9,7 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { MyRouterLinkDirective } from './my-router-link.directive';
 import { MyStucturalDirectiveDirective } from './my-stuctural-directive.directive';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaxCountDirective } from './max-count.directive';
 
 @NgModule({
@@ -26,6 +26,7 @@ import { MaxCountDirective } from './max-count.directive';
   imports: [BrowserModule, 
     AppRoutingModule, 
     FormsModule, //TEMPLATE DRIVEN APPROACH
+    ReactiveFormsModule, //REACTIVE DRIVEN APPROACH
   ],
   providers: [],
   bootstrap: [AppComponent],
