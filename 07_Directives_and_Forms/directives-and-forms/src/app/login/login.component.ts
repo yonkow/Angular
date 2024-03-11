@@ -7,14 +7,14 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  @ViewChild('loginForm') loginForm: NgForm | undefined;
+  @ViewChild('loginForm') form: NgForm | undefined;
 
   formSubmitHandler() {
-    if (!this.loginForm) {
+    if (!this.form) {
       return;
     }
 
-    const form = this.loginForm;
+    const form = this.form;
     console.log(form.value);
 
     // *form value => on init
