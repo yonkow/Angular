@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { MyRouterLinkDirective } from './my-router-link.directive';
+import { MyStucturalDirectiveDirective } from './my-stuctural-directive.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MyRouterLinkDirective } from './my-router-link.directive';
     RegisterComponent,
     HomeComponent,
     MyRouterLinkDirective,
+    MyStucturalDirectiveDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
