@@ -26,7 +26,8 @@ export class RegisterComponent {
   constructor(private formBuilder: FormBuilder) {}
 
   registerHandler() {
-    console.log(this.form.value);
-    
+    if (this.form.invalid) {
+      return;
+    }
   }
 }

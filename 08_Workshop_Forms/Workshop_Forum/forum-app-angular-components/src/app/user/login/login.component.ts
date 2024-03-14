@@ -28,7 +28,6 @@ export class LoginComponent {
 
   login(form: NgForm): void {
     // TODO: for now we are not handling the data
-
     if (form.invalid) {return;}
 
     this.userService.login();
