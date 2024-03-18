@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.loadUser().subscribe({
-      next: console.log,
+      // next: console.log,
       error: (err) => console.error('Error from App: ', err),
     });
   }
