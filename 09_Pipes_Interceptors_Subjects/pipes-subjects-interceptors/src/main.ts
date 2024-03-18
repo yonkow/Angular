@@ -84,11 +84,11 @@ platformBrowserDynamic()
 // rSubject$$.subscribe((data)=> console.log('Subscr 3: ', data))
 
 //ASYNC SUBJECT
-const asyncSubject$$ = new AsyncSubject();
-asyncSubject$$.next(1);
-asyncSubject$$.next(2);
-asyncSubject$$.next(3);
-asyncSubject$$.subscribe((data)=> console.log('Subscr 1: ', data));
-asyncSubject$$.next(4);
-asyncSubject$$.subscribe((data)=> console.log('Subscr 1: ', data));
-asyncSubject$$.complete();
+// const asyncSubject$$ = new AsyncSubject();
+// asyncSubject$$.next(1);
+// asyncSubject$$.next(2);
+// asyncSubject$$.next(3);
+// asyncSubject$$.subscribe((data)=> console.log('Subscr 1: ', data));
+// asyncSubject$$.next(4);
+// asyncSubject$$.subscribe((data)=> console.log('Subscr 1: ', data));
+// asyncSubject$$.complete();
